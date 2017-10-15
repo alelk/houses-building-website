@@ -1,0 +1,44 @@
+.Navigation {
+    display: block;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    background-color: #ccc;
+    top: 0;
+}
+
+.Navigation .logo {
+    float: left;
+    display: inline-block;
+    width: 150px;
+}
+
+.Navigation .navItems {
+    text-transform: uppercase;
+    font-size: 20px;
+    list-style : none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    height: 60px;
+    user-select: none;
+    padding: 0;
+}
+
+.Navigation a {
+    display: block;
+    padding: 0 10px 0 10px;
+    clear: both;
+}
+
+.Navigation a.active {
+    background-color: bisque;
+}
+
+.Navigation li {
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    cursor: pointer;
+}
