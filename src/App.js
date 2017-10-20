@@ -1,46 +1,57 @@
 import Navigation from './Navigation'
+import Header from './header/Header'
 import './App.css';
 
+import AboutCompanyPanel from './header/AboutCompanyPanel'
 import React, { Component } from 'react';
-import {Link, Element, scrollSpy, animateScroll} from 'react-scroll'
-import Logo from './Logo'
+import MediaQuery from 'react-responsive';
+import {Switch, Route, Link, withRouter} from 'react-router-dom'
 
 class App extends Component {
 
-  componentWillMount() {
-    scrollSpy.update();
-  }
+    renderNavigationMenu(className) {
+        return (
+            <Navigation>
+                <Link to="/">Услуги</Link>
+                <Link to="/about">О нас</Link>
+            </Navigation>
+        )
+    }
 
-  render() {
-    return (
-      <div className="App">
-        <Navigation logo={<Logo onClick={animateScroll.scrollToTop}/>}>
-          <Link activeClass='active'
-                className="element1"
-                to="element1"
-                spy={true}
-                smooth={true}
-                offset={-44}
-                duration={500}>
-            Element1
-          </Link>
-          <Link activeClass='active'
-                className="element2"
-                to="element2"
-                spy={true}
-                smooth={true}
-                offset={-44}
-                duration={500}>
-            Element2
-          </Link>
-        </Navigation>
-        <div className="content">
-          <Element name="element1" className="element" style={{height:1000}}>Element1</Element>
-          <Element name="element2" className="element" style={{height:1000}}>Element2</Element>
-        </div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <MediaQuery minWidth={1200}>
+                {(matches) => (
+                    <div className="App">
+                        <Header>
+                            {matches && this.renderNavigationMenu('desktop') || undefined}
+                        </Header>
+                        {!matches && this.renderNavigationMenu('mobile') || undefined}
+                        <content>
+                            <Switch>
+                                <Route exact path={'/'} render={() => "Home"}/>
+                                <Route path={'/about'} render={() => "About"}/>
+                            </Switch>
+                        </content>
+                    </div>
+                )}
+            </MediaQuery>
+        );
+    }
 }
 
 export default App;
+
+/*
+ <Header>
+ <Navigation logo={withRouter(({history}) => <Logo onClick={() => history.push("/")}/>)}>
+ <Link to="/">Услуги</Link>
+ <Link to="/about">О нас</Link>
+ </Navigation>
+ </Header>
+ <content>
+ <Switch>
+ <Route exact path={'/'} render={() => "Home"}/>
+ <Route path={'/about'} render={() => "About"}/>
+ </Switch>
+ </content>*/
