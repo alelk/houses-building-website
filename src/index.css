@@ -1,7 +1,13 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  min-width: 320px;
   height: 100%;
   font-family: DINPro, Arial, Helvetica, sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }

@@ -1,10 +1,22 @@
 .App {
     width: 100%;
+    max-width: 1920px;
     height: 100%;
 }
 
 .App > .content:before {
     display: block;
-    height: 44px;
+    height: 58px;
     content: "";
 }
+
+.App .Navigation.mobile {
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 4px #444;
+}
+
+.App .Navigation.mobile:hover {
+    box-shadow: 0 4px 4px #444;
+}
+
