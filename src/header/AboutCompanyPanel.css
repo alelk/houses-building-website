@@ -7,17 +7,16 @@
     font-size: 2vw;
 }
 
-.AboutCompanyPanel .logo {
-    width: 40px;
-    height: 40px;
-}
-
 .AboutCompanyPanel .company span {
     display: block;
 }
 
 .AboutCompanyPanel .company .name {
     font-size: 3vw;
+}
+
+.AboutCompanyPanel .logo {
+    margin: auto;
 }
 
 @media screen and (max-width: 600px) {
