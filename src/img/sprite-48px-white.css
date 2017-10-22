@@ -1,0 +1,19 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.ic_store_white_48px {
+  background-image: url(./sprite-48px-white.png);
+  background-position: 0px 0px;
+  width: 48px;
+  height: 48px;
+}
+.ic_menu_white_48px {
+  background-image: url(./sprite-48px-white.png);
+  background-position: -48px 0px;
+  width: 48px;
+  height: 48px;
+}

@@ -10,13 +10,3 @@
     content: "";
 }
 
-.App .Navigation.mobile {
-    position: fixed;
-    top: 0;
-    box-shadow: 0 2px 4px #444;
-}
-
-.App .Navigation.mobile:hover {
-    box-shadow: 0 4px 4px #444;
-}
-
