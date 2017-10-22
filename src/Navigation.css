@@ -5,21 +5,18 @@
     background-color: rgba(0, 0, 112, 0.72);
 }
 
-.Navigation .logo {
-    float: left;
+.Navigation > * {
     display: inline-block;
-    width: 150px;
 }
 
 .Navigation .navItems {
     text-transform: uppercase;
+    height: 60px;
+    line-height: 60px;
     font-size: 18px;
     list-style : none;
-    display: block;
-    width: 100%;
     text-align: center;
-    margin: auto;
-    height: 60px;
+    margin: 0 0 0 20px;
     user-select: none;
     padding: 0;
 }
@@ -37,8 +34,69 @@
 }
 
 .Navigation li {
-    height: 60px;
     line-height: 60px;
     display: inline-block;
     cursor: pointer;
+}
+.Navigation .phone {
+    color: white;
+    float: right;
+    margin-right: 20px;
+    height: 60px;
+}
+
+.Navigation .phone > * {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.Navigation .phone .icon {
+    margin-top: 18px;
+}
+
+.Navigation.mobile {
+    position: fixed;
+    top: 0;
+}
+
+.Navigation .menuIcon {
+    float: left;
+    margin: 6px;
+}
+
+.Navigation.mobile .navItems {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    margin: 0;
+    display: block;
+    width: 40%;
+    height: auto;
+    min-width: 320px;
+    background-color: rgba(0, 0, 130, 0.82);
+    overflow: visible;
+}
+
+.Navigation .navItem {
+    position: relative;
+}
+
+.Navigation.desktop .navItem:after {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    content: "";
+    width: 1px;
+    height: 18px;
+    background-color: #009191;
+}
+
+.Navigation.desktop .navItem:last-child:after {
+    display: none;
+}
+
+.Navigation.mobile li {
+    display: block;
 }
