@@ -19,7 +19,7 @@ class Navigation extends React.Component {
             <ul className="navItems">
                 {children &&
                 React.Children.map(children,
-                    (child, i) => <li key={i} className="navItem">{child}</li>
+                    (child, i) => <li key={i} className="navItem" onClick={this.onMenuClick}>{child}</li>
                 )
                 }
             </ul>)

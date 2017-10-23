@@ -4,7 +4,7 @@ html, body {
   width: 100%;
   min-width: 320px;
   height: 100%;
-  font-family: DINPro, Arial, Helvetica, sans-serif;
+  font-family: opensans-regular, Arial, Helvetica, sans-serif;
 }
 
 #root {

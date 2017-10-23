@@ -1,5 +1,6 @@
 import Navigation from './Navigation'
 import Header from './header/Header'
+import HouseBuildingCalc from './calculator/HouseBuildingCalc'
 import './App.css';
 
 import AboutCompanyPanel from './header/AboutCompanyPanel'
@@ -30,7 +31,7 @@ class App extends Component {
                         <content>
                             <Switch>
                                 <Route exact path={'/'} render={() => "Home"}/>
-                                <Route path={'/about'} render={() => "About"}/>
+                                <Route path={'/about'} component={HouseBuildingCalc}/>
                             </Switch>
                         </content>
                     </div>

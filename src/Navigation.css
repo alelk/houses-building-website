@@ -58,6 +58,7 @@
 .Navigation.mobile {
     position: fixed;
     top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .Navigation .menuIcon {
@@ -76,10 +77,15 @@
     min-width: 320px;
     background-color: rgba(0, 0, 130, 0.82);
     overflow: visible;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .Navigation .navItem {
     position: relative;
+}
+
+.Navigation.mobile .navItem:hover {
+    background-color: rgba(130, 0, 127, 0.82);
 }
 
 .Navigation.desktop .navItem:after {
