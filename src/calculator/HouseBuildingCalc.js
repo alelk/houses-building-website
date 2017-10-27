@@ -83,6 +83,7 @@ class HouseBuildingCalc extends React.Component {
                                    value={this.state.houseArea}
                                    onChange={(e) => this.onAreaChanged(e.target.value)}
                                    style={{width:'100%'}}
+                                   type={"number"}
                         />
                         <Slider name="Площадь"
                                 value={this.state.houseArea}

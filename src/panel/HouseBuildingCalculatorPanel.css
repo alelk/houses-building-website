@@ -9,3 +9,10 @@
         padding: 40px;
     }
 }
+
+@media not screen and (min-aspect-ratio: 10/8) {
+    .HouseBuildingCalculatorPanel {
+        background-size: auto 100%;
+        background-position: right;
+    }
+}
