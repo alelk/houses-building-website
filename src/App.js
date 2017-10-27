@@ -1,16 +1,17 @@
 import Navigation from './Navigation'
 import Header from './header/Header'
-import HouseBuildingCalc from './calculator/HouseBuildingCalc'
+import HouseBuildingCalculatorPanel from './panel/HouseBuildingCalcPanel'
 import './App.css';
 
 import AboutCompanyPanel from './header/AboutCompanyPanel'
 import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 import {Switch, Route, Link, withRouter} from 'react-router-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
 
-    renderNavigationMenu(className) {
+    renderNavigationMenu() {
         return (
             <Navigation>
                 <Link to="/">Услуги</Link>
@@ -29,10 +30,12 @@ class App extends Component {
                         </Header>
                         {!matches && this.renderNavigationMenu('mobile') || undefined}
                         <content>
+                            <MuiThemeProvider>
                             <Switch>
-                                <Route exact path={'/'} render={() => "Home"}/>
-                                <Route path={'/about'} component={HouseBuildingCalc}/>
+                                <Route exact path={'/'} component={HouseBuildingCalculatorPanel}/>
+                                <Route path={'/about'} component={HouseBuildingCalculatorPanel}/>
                             </Switch>
+                            </MuiThemeProvider>
                         </content>
                     </div>
                 )}

@@ -1,0 +1,11 @@
+.HouseBuildingCalculatorPanel {
+    background: url("./calculator-background.jpeg") no-repeat;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .HouseBuildingCalculatorPanel .HouseBuildingCalc {
+        width: 50%;
+        padding: 40px;
+    }
+}
