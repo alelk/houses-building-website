@@ -11,4 +11,5 @@ yarn-debug.log*
 yarn-error.log*
 /.idea
 *.iml
-/yarn.lock
+yarn.lock
+package-lock.json

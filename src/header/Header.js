@@ -35,26 +35,4 @@ class Header extends React.Component {
     }
 }
 
-const Header_old = ({children}) => {
-    return (
-        <div className="Header">
-            <div>
-                <img src={header_background}/>
-                <div className="filter"/>
-                <div className="left-pane">
-                    <label className="company">
-                        <span className="name">Строительная бригада</span>
-                        <span className="location">г. Павлово</span>
-                    </label>
-                    <label className="callUs">
-                        <span className="title">Позвоните нам сейчас</span>
-                        <span className="phone">{Contacts.phoneNumber}</span>
-                    </label>
-                </div>
-                {children}
-            </div>
-        </div>
-    )
-};
-
 export default Header;
