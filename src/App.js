@@ -76,15 +76,20 @@ class App extends Component {
                     </Segment>
                 </Visibility>
                 <Segment id="about" style={{margin: '1em 1em'}} textAlign="center" raised>
-                    <Header as='h3'>Почему мы?</Header>
+                    <Header as='h3'>Преимущества работы с нами</Header>
                     <Container style={{padding: '8em 0', textAlign:'center'}}>
                         <Statistic color='orange'>
                             <Statistic.Label>более</Statistic.Label>
                             <Statistic.Value>15 лет</Statistic.Value>
-                            <Statistic.Label>опыт в строительстве</Statistic.Label>
+                            <Statistic.Label>успешной работы</Statistic.Label>
+                        </Statistic>
+                        <Statistic color='teal'>
+                            <Statistic.Label>более</Statistic.Label>
+                            <Statistic.Value>80 объектов</Statistic.Value>
+                            <Statistic.Label>успешно завершены</Statistic.Label>
                         </Statistic>
                         <Statistic color='violet'>
-                            <Statistic.Label>высокое</Statistic.Label>
+                            <Statistic.Label>гарантируем высокое</Statistic.Label>
                             <Statistic.Value>качество</Statistic.Value>
                             <Statistic.Label>работ</Statistic.Label>
                         </Statistic>
@@ -93,6 +98,11 @@ class App extends Component {
                             <Statistic.Value>дешевле</Statistic.Value>
                             <Statistic.Label>чем у конкурентов</Statistic.Label>
                         </Statistic>
+                        <Statistic color='red'>
+                            <Statistic.Label>сроки</Statistic.Label>
+                            <Statistic.Value>быстрые</Statistic.Value>
+                            <Statistic.Label>выполнения работ</Statistic.Label>
+                        </Statistic>
                         <Statistic color='purple'>
                             <Statistic.Label>мы рассчитаем</Statistic.Label>
                             <Statistic.Value>бесплатно</Statistic.Value>
@@ -100,7 +110,47 @@ class App extends Component {
                         </Statistic>
                     </Container>
                 </Segment>
+                <Segment style={{margin: '1em 1em'}} textAlign='center' raised>
+                    <Header as='h3'>Наши услуги</Header>
+                    <Grid container stackable verticalAlign='middle' style={{padding:'8em 0'}}>
+                        <Grid.Row>
+                            <Grid.Column width={8} textAlign='left'>
+                                <List size='huge'>
+                                    <List.Item>Постройка каркасных домов</List.Item>
+                                    <List.Item>Постройка беседок</List.Item>
+                                    <List.Item>Постройка бань</List.Item>
+                                    <List.Item>Обшивка сайдингом</List.Item>
+                                    <List.Item>Заливка фундаментом</List.Item>
+                                    <List.Item>Кровельные работы</List.Item>
+                                    <List.Item>И многое другое</List.Item>
+                                </List>
+                            </Grid.Column>
+                            <Grid.Column width={6}>
+
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
+                </Segment>
                 <Segment inverted vertical style={{padding:"5em 0"}}>
+                    <Container>
+                        <Grid divided inverted stackable>
+                        <Grid.Row>
+                            <Grid.Column width={3}>
+                                <Header as='h4' inverted>Строительная бригада</Header>
+                                <List link inverted>
+                                    <List.Item as='a'>О нас</List.Item>
+                                    <List.Item as='a'>Услуги</List.Item>
+                                </List>
+                            </Grid.Column>
+                            <Grid.Column width={3}>
+                                <Header as='h4' inverted>Контакты</Header>
+                                <List link inverted>
+                                    <List.Item as='a'><Icon name='phone'/>{Contacts.phoneNumber}</List.Item>
+                                </List>
+                            </Grid.Column>
+                        </Grid.Row>
+                        </Grid>
+                    </Container>
                 </Segment>
             </div>
         )
