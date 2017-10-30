@@ -11,6 +11,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scroll": "^1.5.5",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.75.1",
     "typeface-roboto": "0.0.41"
   },
   "scripts": {
@@ -22,7 +24,6 @@
   },
   "devDependencies": {
     "create-react-app": "^1.4.1",
-    "gmsmith": "^1.1.2",
     "material-design-icons": "^3.0.1",
     "react-scripts": "1.0.14",
     "spritesmith-cli": "^1.1.2"

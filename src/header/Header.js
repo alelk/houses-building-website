@@ -5,7 +5,7 @@
  */
 import AboutCompanyPanel from './AboutCompanyPanel'
 import {Contacts} from '../data/data'
-import header_background from './header-background.jpeg'
+import header_background from '../header-background.jpeg'
 import './Header.css'
 
 import React from 'react';
