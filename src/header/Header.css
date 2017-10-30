@@ -39,12 +39,17 @@
 }
 
 .Header .image-area .Panel {
+    display: inline-block;
     width: 50%;
     height: 100%;
 }
 
 .Header .image-area .Panel.mobile {
     width: 100%;
+}
+
+.Header .image-area .CompanySkillsPanel {
+    right: 0;
 }
 
 
