@@ -1,0 +1,16 @@
+.CompanySkillsPanel {
+    font-size: 18px;
+}
+
+.CompanySkillsPanel .skill {
+    width: 100%;
+    text-align: center;
+}
+
+.CompanySkillsPanel .skill > * {
+    display: inline-block;
+}
+
+.CompanySkillsPanel .skill > div {
+    margin-right: 10px;
+}

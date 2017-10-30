@@ -7,9 +7,11 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const Panel = ({className, children}) => {
+import './Panel.css'
+
+const Panel = ({className, children, centerVertically}) => {
     return (
-        <div className={`Panel${(className && ' ' + className) || ''}`}>
+        <div className={`Panel${(className && ' ' + className) || ''}${(centerVertically && ' centerVertically')||''}`}>
             <div className="content">
                 {children}
             </div>
@@ -17,7 +19,8 @@ const Panel = ({className, children}) => {
     )
 };
 Panel.propTypes = {
-    className : PropTypes.string
+    className : PropTypes.string,
+    centerVertically : PropTypes.bool
 };
 
 export default Panel;

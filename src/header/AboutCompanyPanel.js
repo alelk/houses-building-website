@@ -13,7 +13,8 @@ import PropTypes from 'prop-types'
 
 const AboutCompanyPanel = ({className, onLogoClick}) => {
     return (
-        <Panel className={`AboutCompanyPanel${(className && ' ' + className) || ''}`}>
+        <Panel className={`AboutCompanyPanel${(className && ' ' + className) || ''}`}
+               centerVertically={true}>
             <div onClick={onLogoClick} className="logo ic_store_white_48px"/>
             <label className="company">
                 <span className="name">Строительная бригада</span>
