@@ -10,3 +10,13 @@
     content: "";
 }
 
+.headerSegment {
+    background: url("./header-background.jpeg") no-repeat center !important;
+    background-size: auto 100% !important;
+}
+
+@media not screen and (max-aspect-ratio: 1600/853) {
+    .headerSegment {
+        background-size: 100% auto !important;
+    }
+}

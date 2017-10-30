@@ -5,6 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from 'react-router-dom'
 import 'typeface-roboto'
+import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render((
     <BrowserRouter>
