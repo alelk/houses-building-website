@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 import {Container, Grid, Header, List, Icon, Segment} from 'semantic-ui-react'
 
 const mapMenuItem = (item, key) => (
-    <List.Item as='a' href={item.link} key={key}>{item.label}</List.Item>
+    <List.Item as={Link} to={item.link} key={key}>{item.label}</List.Item>
 );
 
 const FooterSegment = ({menu, companyName, phoneNumber}) => {
