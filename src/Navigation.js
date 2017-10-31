@@ -1,4 +1,4 @@
-import {Contacts} from './data/data'
+import {contacts} from './data/company'
 import './Navigation.css'
 import './img/sprite-24px-white.css'
 
@@ -29,7 +29,7 @@ class Navigation extends React.Component {
         return (
             <label className="phone">
                 <div className="icon ic_call_white_24px"/>
-                <span className='phone'>{Contacts.phoneNumber}</span>
+                <span className='phone'>{contacts.phoneNumber}</span>
             </label>
         )
     }

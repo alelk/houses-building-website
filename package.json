@@ -16,7 +16,6 @@
     "typeface-roboto": "0.0.41"
   },
   "scripts": {
-    "build-sprites": "spritesmith",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -25,7 +24,6 @@
   "devDependencies": {
     "create-react-app": "^1.4.1",
     "material-design-icons": "^3.0.1",
-    "react-scripts": "1.0.14",
-    "spritesmith-cli": "^1.1.2"
+    "react-scripts": "1.0.14"
   }
 }

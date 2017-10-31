@@ -1,0 +1,16 @@
+.StatisticSegment {
+    text-align: center;
+    background-image: url("./statistic-background.png") !important;
+}
+
+.StatisticSegment .container> {
+    margin: 5em 0
+}
+
+.StatisticSegment .statistic {
+    margin: 4em 2em !important;
+}
+
+.StatisticSegment .statistic .icon {
+    margin-right: 0.5em !important;
+}

@@ -11,7 +11,7 @@
 }
 
 .headerSegment {
-    background: url("./header-background.jpeg") no-repeat center !important;
+    background: url("segment/header-background.jpeg") no-repeat center !important;
     background-size: auto 100% !important;
 }
 

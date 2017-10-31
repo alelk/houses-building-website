@@ -1,0 +1,10 @@
+.HeaderSegment {
+    background: url("./header-background.jpeg") no-repeat center !important;
+    background-size: auto 100% !important;
+}
+
+@media not screen and (max-aspect-ratio: 1600/853) {
+    .HeaderSegment {
+        background-size: 100% auto !important;
+    }
+}
