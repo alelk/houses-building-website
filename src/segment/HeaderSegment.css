@@ -3,7 +3,7 @@
     background-size: auto 100% !important;
 }
 
-@media not screen and (max-aspect-ratio: 1600/853) {
+@media not screen and (max-width: 1330px) {
     .HeaderSegment {
         background-size: 100% auto !important;
     }
