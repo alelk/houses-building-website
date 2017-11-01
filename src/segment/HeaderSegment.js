@@ -15,9 +15,7 @@ const HeaderSegment = ({menu, companyName, companyLocation, phoneNumber, onHeade
                  style={{minHeight: 700, padding: '1em 0'}}>
             <div className="headerFilter"/>
             <Visibility onBottomPassed={onHeaderHide} onBottomVisible={onHeaderVisible} once={false}>
-                <Container>
-                    {menu}
-                </Container>
+                {menu && <Container>{menu}</Container>}
                 <Container text>
                     <Header as='h1' content={companyName} inverted style={{fontSize: '3em', marginTop: '4em'}}/>
                     <Header as='h2' content={companyLocation} inverted/>
