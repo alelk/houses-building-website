@@ -3,6 +3,12 @@
  *
  * Created by Alex Elkin on 18.10.2017.
  */
+import imgBathhouse from './services-bathhouse.jpeg'
+import imgFoundation from './services-foundation.jpg'
+import imgHouses from './services-houses.jpeg'
+import imgPavilion from './services-pavilion.jpg'
+import imgRoof from './services-roof.jpeg'
+import imgSiding from './services-siding.jpg'
 
 export const contacts = {
     phoneNumber : '+7(950)614-45-09',
@@ -51,10 +57,10 @@ export const statistics = [
 ];
 
 export const services = [
-    {label:"Постройка каркасных домов"},
-    {label:"Постройка беседок"},
-    {label:"Постройка бань"},
-    {label:"Обшивка сайдингом"},
-    {label:"Заливка фундаментом"},
-    {label:"Кровельные работы"},
+    {label:"Постройка каркасных домов", img:imgHouses},
+    {label:"Постройка беседок", img:imgPavilion},
+    {label:"Постройка бань", img:imgBathhouse},
+    {label:"Обшивка сайдингом", img: imgSiding},
+    {label:"Заливка фундамента", img: imgFoundation},
+    {label:"Кровельные работы", img: imgRoof},
 ];

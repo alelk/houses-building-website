@@ -3,35 +3,36 @@
  *
  * Created by Alex Elkin on 31.10.2017.
  */
+import './ServicesSegment.css'
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, List, Header, Segment} from 'semantic-ui-react'
+import {Grid, List, Container, Header, Segment, Card, Icon, Image} from 'semantic-ui-react'
 
 const mapService = (service, key) => (
-    <List.Item key={key}>{service.label}</List.Item>
+    <Card key={key}>
+        <Image src={service.img}/>
+        <Card.Content>
+            <Card.Header>{service.label}</Card.Header>
+        </Card.Content>
+    </Card>
 );
-
 const ServicesSegment = ({services}) => {
     return (
-        <Segment style={{margin: '1em 1em'}} textAlign='center' raised>
+        <Segment textAlign='center' raised className="ServicesSegment">
             <Header as='h3'>Наши услуги</Header>
-            <Grid container stackable verticalAlign='middle' style={{padding: '8em 0'}}>
-                <Grid.Row>
-                    <Grid.Column width={8} textAlign='left'>
-                        {services && <List size='huge'>{services.map(mapService)}</List>}
-                    </Grid.Column>
-                    <Grid.Column width={6}>
-
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+            <Container textAlign="center">
+            <Card.Group>
+                {services && services.map(mapService)}
+            </Card.Group>
+            </Container>
         </Segment>
     )
 };
 ServicesSegment.propTypes = {
     services: PropTypes.arrayOf(PropTypes.shape({
-        label: PropTypes.string
+        label: PropTypes.string,
+        img: PropTypes.string
     }))
 };
 export default ServicesSegment;
