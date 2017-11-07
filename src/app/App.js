@@ -13,6 +13,7 @@ import FooterSegment from '../segment/FooterSegment'
 import './App.css';
 import React, { Component } from 'react';
 import Scroll from 'react-scroll';
+import scrollToComponent from 'react-scroll-to-component';
 
 class App extends Component {
 
@@ -39,10 +40,12 @@ class App extends Component {
     }
 
     static scrollTo(elementId) {
+        scrollToComponent(this.Statistic, { offset: 0, align: 'top', duration: 500, ease:'inExpo'});
+        /*
         Scroll.scroller.scrollTo(
             elementId,
             {duration: 500, smooth: true, offset:-50}
-        );
+        );*/
     }
 
     toggleSideNavigationVisibility() {
@@ -64,7 +67,7 @@ class App extends Component {
     static renderStatistic() {
         return (
             <Scroll.Element name="about">
-                <StatisticSegment statistics={statistics}/>
+                <StatisticSegment ref = {(divRef) => this.Statistic = divRef} statistics={statistics}/>
             </Scroll.Element>
         )
     }
