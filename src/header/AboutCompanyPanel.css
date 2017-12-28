@@ -1,0 +1,26 @@
+.AboutCompanyPanel > .content {
+    text-align: center;
+    font-weight: 100;
+    font-size: 2vw;
+}
+
+.AboutCompanyPanel .company span {
+    display: block;
+}
+
+.AboutCompanyPanel .company .name {
+    font-size: 3vw;
+}
+
+.AboutCompanyPanel .logo {
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .AboutCompanyPanel > .content {
+        font-size: 12px;
+    }
+    .AboutCompanyPanel .company .name {
+        font-size: 16px;
+    }
+}
