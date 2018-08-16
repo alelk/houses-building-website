@@ -17,18 +17,23 @@ const mapService = (service, key) => (
         </Card.Content>
     </Card>
 );
-const ServicesSegment = ({services}) => {
-    return (
-        <Segment textAlign='center' raised className="ServicesSegment">
-            <Header as='h3'>Наши услуги</Header>
-            <Container textAlign="center">
-            <Card.Group>
-                {services && services.map(mapService)}
-            </Card.Group>
-            </Container>
-        </Segment>
-    )
-};
+
+class ServicesSegment extends React.Component {
+
+    render() {
+        const {services} = this.props;
+        return (
+            <Segment textAlign='center' raised className="ServicesSegment">
+                <Header as='h3'>Наши услуги</Header>
+                <Container textAlign="center">
+                    <Card.Group>
+                        {services && services.map(mapService)}
+                    </Card.Group>
+                </Container>
+            </Segment>
+        )
+    }
+}
 ServicesSegment.propTypes = {
     services: PropTypes.arrayOf(PropTypes.shape({
         label: PropTypes.string,

@@ -4,7 +4,7 @@
  * Created by Alex Elkin on 04.11.2017.
  */
 
-import {footerMenu} from '../data/site'
+import {footerMenu, headerMenu} from '../data/site'
 import {contacts, statistics, services} from '../data/company'
 import StatisticSegment from '../segment/StatisticSegment'
 import ServicesSegment from '../segment/ServicesSegment'
@@ -12,8 +12,11 @@ import FooterSegment from '../segment/FooterSegment'
 
 import './App.css';
 import React, { Component } from 'react';
-import Scroll from 'react-scroll';
+import PropTypes from 'prop-types'
 import scrollToComponent from 'react-scroll-to-component';
+import SiteMenu from "../menu/SiteMenu";
+import SideNavigation from "../menu/SideNavigation";
+import HeaderSegment from "../segment/HeaderSegment";
 
 class App extends Component {
 
@@ -26,26 +29,29 @@ class App extends Component {
         this.state = {
             isHeaderVisible: true,
             isSideNavigationVisible: false
-        }
+        };
+        this.componentRefs = {};
     }
 
-    componentWillReceiveProps(nextProps) {
-        const {hash, key, pathname} = nextProps.location;
-        if (key === this.props.location.key) return;
-        console.log("next: ", nextProps);
-        if (/#(\w+)$/.test(hash) && key !== this.props.location.key)
-            App.scrollTo(/#(\w+)$/.exec(hash)[1]);
-        else if ("" === hash && "/" === pathname)
-            App.scrollTo("header");
+    componentDidUpdate(prevProps) {
+        const {hash, key} = this.props.location;
+        if (key === prevProps.location.key) return;
+        this.scrollTo(App.elementIdFromHash(hash))
     }
 
-    static scrollTo(elementId) {
-        scrollToComponent(this.Statistic, { offset: 0, align: 'top', duration: 500, ease:'inExpo'});
-        /*
-        Scroll.scroller.scrollTo(
-            elementId,
-            {duration: 500, smooth: true, offset:-50}
-        );*/
+    componentDidMount() {
+        this.scrollTo(App.elementIdFromHash(this.props.location.hash))
+    }
+
+    static elementIdFromHash(hash) {
+        if (/#(\w+)$/.test(hash))
+            return /#(\w+)$/.exec(hash)[1];
+        if ("" === hash) return 'header';
+        return null;
+    }
+
+    scrollTo(elementId) {
+        scrollToComponent(this.componentRefs[elementId], { offset: 0, align: 'top', duration: 500, ease:'inExpo'});
     }
 
     toggleSideNavigationVisibility() {
@@ -64,28 +70,50 @@ class App extends Component {
         this.setState({isHeaderVisible: false})
     }
 
-    static renderStatistic() {
+    renderBody() {
         return (
-            <Scroll.Element name="about">
-                <StatisticSegment ref = {(divRef) => this.Statistic = divRef} statistics={statistics}/>
-            </Scroll.Element>
+            <React.Fragment>
+                <StatisticSegment ref = {divRef => this.componentRefs.about = divRef} statistics={statistics}/>
+                <ServicesSegment ref = {divRef => this.componentRefs.services = divRef} services={services}/>
+                <FooterSegment ref = {divRef => this.componentRefs.contacts = divRef} menu={footerMenu} {...contacts}/>
+            </React.Fragment>
         )
     }
 
-    static renderServices() {
+    render() {
+        const {mobile} = this.props;
         return (
-            <Scroll.Element name="services">
-                <ServicesSegment services={services}/>
-            </Scroll.Element>
+            <div className={`App ${mobile ? 'mobile' : 'desktop'}`}>
+                {mobile ? (
+                    <React.Fragment>
+                        <SiteMenu {...contacts} onMenuButtonClick={this.toggleSideNavigationVisibility} inverted
+                                  style={{margin: "0"}}/>
+                        <SideNavigation menu={headerMenu}
+                                        visible={this.state.isSideNavigationVisible}
+                                        onItemSelected={this.onSideNavigationHide}>
+                            <HeaderSegment {...contacts} ref = {divRef => this.componentRefs.header = divRef}/>
+                            {this.renderBody()}
+                        </SideNavigation>
+                    </React.Fragment>
+                ) : (
+                    <React.Fragment>
+                        {!this.state.isHeaderVisible && <SiteMenu fixed="top" menu={headerMenu} {...contacts} homeLink="/"/>}
+                        <HeaderSegment ref = {divRef => this.componentRefs.header = divRef}
+                                       menu={<SiteMenu menu={headerMenu} {...contacts} homeLink="/" inverted/>}
+                                       onHeaderVisible={this.onHeaderShow}
+                                       onHeaderHide={this.onHeaderHide}
+                                       {...contacts}
+                        />
+                        {this.renderBody()}
+                    </React.Fragment>
+                )}
+            </div>
         )
     }
-
-    static renderFooter() {
-        return (
-            <FooterSegment menu={footerMenu} {...contacts}/>
-        )
-    }
-
 }
+
+App.propTypes = {
+    mobile: PropTypes.bool
+};
 
 export default App;
