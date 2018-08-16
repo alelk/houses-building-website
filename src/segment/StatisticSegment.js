@@ -23,18 +23,22 @@ const mapStatistics = (statistic, key) => {
     )
 };
 
-const StatisticSegment = ({statistics}) => {
-    return (
-        <Segment className="StatisticSegment" raised>
-            <Header as='h3'>Преимущества работы с нами</Header>
-            <Container>
-                {
-                    statistics && statistics.map(mapStatistics)
-                }
-            </Container>
-        </Segment>
-    )
-};
+class StatisticSegment extends React.Component {
+
+    render() {
+        const {statistics} = this.props;
+        return (
+            <Segment className="StatisticSegment" raised>
+                <Header as='h3'>Преимущества работы с нами</Header>
+                <Container>
+                    {
+                        statistics && statistics.map(mapStatistics)
+                    }
+                </Container>
+            </Segment>
+        )
+    }
+}
 StatisticSegment.propTypes = {
     statistics : PropTypes.arrayOf(PropTypes.shape({
         topLabel : PropTypes.string,
