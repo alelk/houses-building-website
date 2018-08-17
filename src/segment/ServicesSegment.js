@@ -7,7 +7,7 @@ import './ServicesSegment.css'
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, List, Container, Header, Segment, Card, Icon, Image} from 'semantic-ui-react'
+import {Container, Header, Segment, Card, Image} from 'semantic-ui-react'
 
 const mapService = (service, key) => (
     <Card key={key}>
