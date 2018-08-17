@@ -29,7 +29,7 @@ class FooterSegment extends React.Component {
                             <Grid.Column width={4}>
                                 <Header as={Link} to="/#contacts" inverted>Контакты</Header>
                                 <List link inverted>
-                                    <List.Item as='a'><Icon name='phone'/>{phoneNumber}</List.Item>
+                                    <List.Item as='a' href={`tel:${phoneNumber}`}><Icon name='phone'/>{phoneNumber}</List.Item>
                                 </List>
                             </Grid.Column>
                         </Grid.Row>

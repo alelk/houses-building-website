@@ -22,7 +22,7 @@ class HeaderSegment extends React.Component {
                     <Container text>
                         <Header as='h1' content={companyName} inverted style={{fontSize: '3em', marginTop: '4em'}}/>
                         <Header as='h2' content={companyLocation} inverted/>
-                        <Header as='h2' inverted style={{marginTop: '2em'}}>
+                        <Header as='a' inverted style={{marginTop: '2em'}} href={`tel:${phoneNumber}`}>
                             <Icon name='phone'/>{phoneNumber}
                         </Header>
                     </Container>

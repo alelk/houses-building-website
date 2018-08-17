@@ -29,7 +29,7 @@ const menuButton = (inverted, onClick) => (
 );
 
 const phone = (phoneNumber) => (
-    <Menu.Item position="right">
+    <Menu.Item as='a' position="right" href={`tel:${phoneNumber}`}>
         <Label size='large' color='black'><Icon name='phone'/>{phoneNumber}</Label>
     </Menu.Item>
 );
