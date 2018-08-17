@@ -6,11 +6,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter, Route} from 'react-router-dom'
-//import 'typeface-roboto'
 import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render((
-    <BrowserRouter>
+    <BrowserRouter basename='/houses-building-website/'>
         <Route path="/" component={RootComponent}/>
     </BrowserRouter>
 ), document.getElementById('root'));
