@@ -5,7 +5,7 @@
  */
 
 export const footerMenu = [
-    {label:"О нас", link: "#/about"},
+    {label:"О нас", link: "/#about"},
     {label:"Услуги", link: "/#services"}
 ];
 

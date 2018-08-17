@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types'
-import {Responsive, Button, Sidebar, Menu, Label, Icon, Segment} from 'semantic-ui-react'
+import {Button, Menu, Label, Icon} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 
 const renderMenuItem = (item, key, onItemSelected) => (

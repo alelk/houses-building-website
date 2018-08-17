@@ -7,7 +7,7 @@ import SiteMenu from './SiteMenu'
 
 import React from 'react';
 import PropTypes from 'prop-types'
-import {Responsive, Button, Sidebar, Label, Icon, Segment} from 'semantic-ui-react'
+import {Sidebar, Segment} from 'semantic-ui-react'
 
 const SideNavigation = ({
                             visible, inverted, menu, children,
