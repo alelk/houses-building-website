@@ -1,6 +1,6 @@
 {
   "name": "houses-building-website",
-  "homepage": "https://alelk.github.io/houses-building-website",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,16 +14,19 @@
     "semantic-ui-react": "^0.82.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "REACT_APP_BASE_NAME='/houses-building-website/' gh-pages -d build",
+    "predeploy": "REACT_APP_BASE_NAME='/houses-building-website/' npm run build",
+    "predeploy:netlify": "npm run build",
+    "deploy": "gh-pages -d build",
+    "deploy:netlify": "npm run predeploy:netlify && netlify deploy -p build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0",
     "create-react-app": "^1.4.1",
+    "gh-pages": "^1.2.0",
+    "netlify-cli": "^1.2.3",
     "react-scripts": "1.0.14"
   }
 }
